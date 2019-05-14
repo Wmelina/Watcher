@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>27317747815-ahi8p0voq53grn03no477ptuqcn3m4r9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.27317747815-ahi8p0voq53grn03no477ptuqcn3m4r9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNe3hj81R9vsuH7PW7H79tF52mdoe8KFA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>27317747815</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>wq.Watcher</string>
+	<key>PROJECT_ID</key>
+	<string>watcher-76e46</string>
+	<key>STORAGE_BUCKET</key>
+	<string>watcher-76e46.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:27317747815:ios:f01733fdd2e6f347</string>
+	<key>DATABASE_URL</key>
+	<string>https://watcher-76e46.firebaseio.com</string>
+</dict>
+</plist>
