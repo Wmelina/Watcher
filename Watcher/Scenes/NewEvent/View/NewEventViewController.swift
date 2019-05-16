@@ -7,24 +7,45 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class NewEventViewController: UIViewController {
 
+    private let locationManager = CLLocationManager()
+    
+    var coord = CLLocationCoordinate2D()
+    var nView: NewEventView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nView = NewEventView()
+        view = nView
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        nView.button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func tappedButton() {
+        print("zdarova")
+        print(coord.latitude)
     }
-    */
+}
 
+extension NewEventViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        coord = manager.location!.coordinate
+    }
 }

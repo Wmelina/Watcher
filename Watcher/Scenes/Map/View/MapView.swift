@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import GoogleMaps
+import SnapKit
 
 class MapView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var map: GMSMapView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        GMSServices.provideAPIKey("AIzaSyCNe3hj81R9vsuH7PW7H79tF52mdoe8KFA")
 
+        map = GMSMapView()
+        addSubview(map!)
+        map!.snp.makeConstraints { (make) in
+            make.edges.equalTo(0)
+        }
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -7,24 +7,41 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MapViewController: UIViewController {
+    
+    let mView = MapView()
+    private let locationManager = CLLocationManager()
 
+    override func loadView() {
+        super.loadView()
+        self.view = mView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
 
-        // Do any additional setup after loading the view.
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+        locationManager.startUpdatingLocation()
+        mView.map.isMyLocationEnabled = true
+        mView.map.settings.myLocationButton = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        mView.map.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        locationManager.stopUpdatingLocation()
     }
-    */
-
 }

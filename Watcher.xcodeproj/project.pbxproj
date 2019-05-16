@@ -11,6 +11,7 @@
 		98937D3922848BE400CDD20C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98937D3722848BE400CDD20C /* Main.storyboard */; };
 		98937D3B22848BE500CDD20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98937D3A22848BE500CDD20C /* Assets.xcassets */; };
 		98937D3E22848BE500CDD20C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98937D3C22848BE500CDD20C /* LaunchScreen.storyboard */; };
+		98A73896228DE43300844C98 /* MEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A73895228DE43300844C98 /* MEvent.swift */; };
 		98FC315C228B3B9D00A4F735 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98FC315B228B3B9D00A4F735 /* GoogleService-Info.plist */; };
 		98FC3164228B440B00A4F735 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC3163228B440B00A4F735 /* MapViewController.swift */; };
 		98FC3166228B441A00A4F735 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC3165228B441A00A4F735 /* MapView.swift */; };
@@ -30,6 +31,7 @@
 		98937D3A22848BE500CDD20C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98937D3D22848BE500CDD20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98937D3F22848BE500CDD20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A73895228DE43300844C98 /* MEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEvent.swift; sourceTree = "<group>"; };
 		98FC315B228B3B9D00A4F735 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Watcher/Support/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		98FC3163228B440B00A4F735 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		98FC3165228B441A00A4F735 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -73,12 +75,21 @@
 		98937D3022848BE400CDD20C /* Watcher */ = {
 			isa = PBXGroup;
 			children = (
+				98A73894228DE41200844C98 /* Models */,
 				98FC315E228B3EA800A4F735 /* Scenes */,
 				98FC315D228B3E8400A4F735 /* Support */,
 				98937D3722848BE400CDD20C /* Main.storyboard */,
 				98937D3F22848BE500CDD20C /* Info.plist */,
 			);
 			path = Watcher;
+			sourceTree = "<group>";
+		};
+		98A73894228DE41200844C98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98A73895228DE43300844C98 /* MEvent.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		98FC315D228B3E8400A4F735 /* Support */ = {
@@ -350,6 +361,7 @@
 				98FC316D228B446300A4F735 /* NewEventViewController.swift in Sources */,
 				98FC3166228B441A00A4F735 /* MapView.swift in Sources */,
 				98FC3164228B440B00A4F735 /* MapViewController.swift in Sources */,
+				98A73896228DE43300844C98 /* MEvent.swift in Sources */,
 				98FC3172228B44B400A4F735 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
