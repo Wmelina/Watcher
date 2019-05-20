@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Карта-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="Watcher" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,13 +20,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="ic_compass_needle_large.png" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Карта" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="921" y="0.0"/>
         </scene>
-        <!--New event-->
+        <!--Добавить-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="NewEventViewController" customModule="Watcher" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,13 +36,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New event" image="ic_location_off.png" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Добавить" image="first" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="921" y="767"/>
         </scene>
-        <!--Settings-->
+        <!--Настройки-->
         <scene sceneID="hia-VD-N5r">
             <objects>
                 <viewController id="YG0-EO-89G" customClass="SettingsViewController" customModule="Watcher" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mJs-HI-G1u"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="ic_error.png" id="evC-W4-QXg"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="second" id="evC-W4-QXg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xx4-HC-iVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,8 +79,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_compass_needle_large.png" width="50" height="50"/>
-        <image name="ic_error.png" width="24" height="24"/>
-        <image name="ic_location_off.png" width="24" height="24"/>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>

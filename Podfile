@@ -6,9 +6,15 @@ target 'Watcher' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase'
+  pod 'Firebase/Database'
   pod 'SnapKit'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'CodableFirebase'
+  pod 'UIColor_Hex_Swift'
+  pod 'IQKeyboardManager'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   # Pods for Watcher
 
 end

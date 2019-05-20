@@ -12,6 +12,8 @@ import GoogleMaps
 class MapViewController: UIViewController {
     
     let mView = MapView()
+    private var viewModel: MapViewModel!
+    
     private let locationManager = CLLocationManager()
 
     override func loadView() {
@@ -20,6 +22,7 @@ class MapViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = MapViewModel(map: mView.map)
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 

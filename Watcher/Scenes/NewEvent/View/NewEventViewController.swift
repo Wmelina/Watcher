@@ -12,7 +12,7 @@ import GoogleMaps
 class NewEventViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
-    
+    private let viewModel = NewEventViewModel()
     var coord = CLLocationCoordinate2D()
     var nView: NewEventView!
 
@@ -32,9 +32,24 @@ class NewEventViewController: UIViewController {
     }
     
     @objc func tappedButton() {
-        print("zdarova")
-        print(coord.latitude)
+        if nView.title.text?.count ?? 0 > 0 && nView.desc.text?.count ?? 0 > 0 {
+        viewModel.postToDB(event: viewModel.castToMEvent(title: nView.title.text!, description: nView.desc.text!, latitude: "\(coord.latitude)", longitude: "\(coord.longitude)", type: nView.type.selectedSegmentIndex))
+            
+            let alert = UIAlertController(title: "Успех", message: "Место успешно добавлено", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: .none))
+            self.present(alert, animated: true)
+            
+            nView.desc.text = ""
+            nView.title.text = ""
+            
+        } else {
+            let alert = UIAlertController(title: "Ошибка", message: "Заполните обязательные поля", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: .none))
+            self.present(alert, animated: true)
+        }
     }
+    
+    
 }
 
 extension NewEventViewController: CLLocationManagerDelegate {
@@ -48,4 +63,17 @@ extension NewEventViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         coord = manager.location!.coordinate
     }
+}
+
+extension NewEventViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.location == 0 && string.contains(" ") {
+            return false
+        }
+        
+        return true
+    }
+    
 }

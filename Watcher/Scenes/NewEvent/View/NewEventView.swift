@@ -8,13 +8,14 @@
 
 import UIKit
 import SnapKit
+import UIColor_Hex_Swift
 
 class NewEventView: UIView {
 
     var mainView = UIView()
     var title = UITextField()
     var desc = UITextField()
-    var type = UISegmentedControl(items: ["Все", "Места", "ЧП", "События"])
+    var type = UISegmentedControl(items: ["Места", "ЧП", "События"])
     var button = UIButton(type: .custom)
     var backgroundImage = UIView()
     
@@ -30,21 +31,29 @@ class NewEventView: UIView {
     
     func configureViews() {
         
-        title.placeholder = "Title"
-
-        desc.placeholder = "Description"
+        title.placeholder = "Имя события"
+        title.tintColor = .blue
+        title.layer.shadowColor = UIColor.black.cgColor
+        title.backgroundColor = UIColor("#4169E1")
+        title.layer.cornerRadius = 7
+        title.textColor = .white
         
-        button.setTitle("Send event", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.setTitleShadowColor(.purple, for: .normal)
-        button.setTitleShadowColor(.blue, for: .focused)
+        desc.placeholder = "Описание события"
+        desc.backgroundColor = UIColor("#4169E1")
+        desc.layer.cornerRadius = 7
+        desc.textColor = .white
         
-        button.backgroundColor = .lightGray
-        button.layer.cornerRadius = 15
-        backgroundImage.backgroundColor = .yellow
+        button.setTitle("Отправить событие", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        
+        button.backgroundColor = UIColor("#8A2BE2")
+        button.layer.cornerRadius = 20
+        
+        backgroundImage.backgroundColor = UIColor("#87CEFA")
         backgroundImage.isUserInteractionEnabled = false
         
         type.selectedSegmentIndex = 0
+        type.tintColor = UIColor("#4169E1")
         
         addSubview(backgroundImage)
         addSubview(mainView)
@@ -86,8 +95,8 @@ class NewEventView: UIView {
         }
         
         button.snp.makeConstraints { (make) in
-            make.height.equalTo(30)
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalTo(40)
+            make.width.equalToSuperview().multipliedBy(0.7)
             make.top.equalTo(type.snp.bottom).offset(30)
             make.bottom.equalTo(0)
             make.centerX.equalToSuperview()

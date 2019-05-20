@@ -8,8 +8,8 @@
 
 import Foundation
 
-class MEvent: Codable {
-    let id: String
+struct MEvent: Codable {
+//    let id: String
     let title: String
     let description: String
     let latitude: String
@@ -17,7 +17,7 @@ class MEvent: Codable {
     let type: Int
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+//        case id = "id"
         case title = "title"
         case description = "description"
         case latitude = "latitude"
